@@ -1,0 +1,156 @@
+[debug] [2018-08-28T03:19:50.323Z] ----------------------------------------------------------------------
+[debug] [2018-08-28T03:19:50.325Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rupto\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-08-28T03:19:50.325Z] CLI Version:   4.2.0
+[debug] [2018-08-28T03:19:50.325Z] Platform:      win32
+[debug] [2018-08-28T03:19:50.325Z] Node Version:  v8.11.4
+[debug] [2018-08-28T03:19:50.326Z] Time:          Mon Aug 27 2018 23:19:50 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-08-28T03:19:50.326Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-08-28T03:19:50.335Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-28T03:19:50.336Z] > authorizing via signed-in user
+[debug] [2018-08-28T03:19:50.338Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-08-28T03:19:51.135Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T03:19:51.136Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-08-28T03:19:51.962Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\rupto\OneDrive\Documents\Firebase\Con-Tac-Toe'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-08-28T03:19:52.789Z] Fetching environment
+[debug] [2018-08-28T03:19:52.791Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617:getServerAppConfig  
+ 
+[debug] [2018-08-28T03:19:52.792Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617/clients/_:getWebAppConfig  
+ 
+[debug] [2018-08-28T03:19:53.707Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T03:19:53.708Z] Starting @google-cloud/functions-emulator
+[debug] [2018-08-28T03:19:53.783Z] <<< HTTP RESPONSE 200
+[info] i  hosting[con-tac-toe]: Serving hosting files from: public
+[info] +  hosting[con-tac-toe]: Local server: http://localhost:5000
+[debug] [2018-08-28T03:19:55.761Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2018-08-28T03:19:55.922Z] Error during trigger parsing:  Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[warn] !  functions: Error from emulator. Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[debug] [2018-08-28T03:19:55.923Z] 
+[debug] [2018-08-28T03:21:06.862Z] ----------------------------------------------------------------------
+[debug] [2018-08-28T03:21:06.865Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rupto\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-08-28T03:21:06.865Z] CLI Version:   4.2.0
+[debug] [2018-08-28T03:21:06.865Z] Platform:      win32
+[debug] [2018-08-28T03:21:06.865Z] Node Version:  v8.11.4
+[debug] [2018-08-28T03:21:06.866Z] Time:          Mon Aug 27 2018 23:21:06 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-08-28T03:21:06.866Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-08-28T03:21:06.875Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-28T03:21:06.876Z] > authorizing via signed-in user
+[debug] [2018-08-28T03:21:06.879Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-08-28T03:21:07.247Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T03:21:07.248Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-08-28T03:21:07.489Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\rupto\OneDrive\Documents\Firebase\Con-Tac-Toe'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-08-28T03:21:08.358Z] Fetching environment
+[debug] [2018-08-28T03:21:08.361Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617:getServerAppConfig  
+ 
+[debug] [2018-08-28T03:21:08.362Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617/clients/_:getWebAppConfig  
+ 
+[debug] [2018-08-28T03:21:08.611Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T03:21:08.611Z] Starting @google-cloud/functions-emulator
+[debug] [2018-08-28T03:21:08.683Z] <<< HTTP RESPONSE 200
+[info] i  hosting[con-tac-toe]: Serving hosting files from: public
+[info] +  hosting[con-tac-toe]: Local server: http://localhost:5000
+[debug] [2018-08-28T03:21:10.668Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2018-08-28T03:21:10.829Z] Error during trigger parsing:  Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[warn] !  functions: Error from emulator. Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[debug] [2018-08-28T03:21:10.830Z] 
+[debug] [2018-08-28T03:22:51.037Z] ----------------------------------------------------------------------
+[debug] [2018-08-28T03:22:51.040Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rupto\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-08-28T03:22:51.040Z] CLI Version:   4.2.0
+[debug] [2018-08-28T03:22:51.040Z] Platform:      win32
+[debug] [2018-08-28T03:22:51.040Z] Node Version:  v8.11.4
+[debug] [2018-08-28T03:22:51.040Z] Time:          Mon Aug 27 2018 23:22:51 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-08-28T03:22:51.040Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-08-28T03:22:51.049Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-28T03:22:51.050Z] > authorizing via signed-in user
+[debug] [2018-08-28T03:22:51.052Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-08-28T03:22:51.396Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T03:22:51.397Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-08-28T03:22:51.614Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\rupto\OneDrive\Documents\Firebase\Con-Tac-Toe'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-08-28T03:22:52.408Z] Fetching environment
+[debug] [2018-08-28T03:22:52.410Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617:getServerAppConfig  
+ 
+[debug] [2018-08-28T03:22:52.410Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617/clients/_:getWebAppConfig  
+ 
+[debug] [2018-08-28T03:22:52.689Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T03:22:52.710Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T03:22:52.710Z] Starting @google-cloud/functions-emulator
+[info] i  hosting[con-tac-toe]: Serving hosting files from: public
+[info] +  hosting[con-tac-toe]: Local server: http://localhost:5000
+[debug] [2018-08-28T03:22:54.770Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2018-08-28T03:22:54.929Z] Error during trigger parsing:  Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[warn] !  functions: Error from emulator. Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[debug] [2018-08-28T03:22:54.930Z] 
+[debug] [2018-08-28T03:27:02.383Z] ----------------------------------------------------------------------
+[debug] [2018-08-28T03:27:02.386Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rupto\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-08-28T03:27:02.386Z] CLI Version:   4.2.0
+[debug] [2018-08-28T03:27:02.386Z] Platform:      win32
+[debug] [2018-08-28T03:27:02.386Z] Node Version:  v8.11.4
+[debug] [2018-08-28T03:27:02.386Z] Time:          Mon Aug 27 2018 23:27:02 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-08-28T03:27:02.386Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-08-28T03:27:02.396Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-08-28T03:27:02.396Z] > authorizing via signed-in user
+[debug] [2018-08-28T03:27:02.398Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-08-28T03:27:04.009Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T03:27:04.010Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-08-28T03:27:04.599Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\rupto\OneDrive\Documents\Firebase\Con-Tac-Toe'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-08-28T03:27:05.402Z] Fetching environment
+[debug] [2018-08-28T03:27:05.405Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617:getServerAppConfig  
+ 
+[debug] [2018-08-28T03:27:05.406Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617/clients/_:getWebAppConfig  
+ 
+[debug] [2018-08-28T03:27:06.383Z] <<< HTTP RESPONSE 200
+[debug] [2018-08-28T03:27:06.383Z] Starting @google-cloud/functions-emulator
+[debug] [2018-08-28T03:27:06.426Z] <<< HTTP RESPONSE 200
+[info] i  hosting[con-tac-toe]: Serving hosting files from: public
+[info] +  hosting[con-tac-toe]: Local server: http://localhost:5000
+[debug] [2018-08-28T03:27:08.442Z] Parsing function triggers
+[warn] !  functions: Failed to load functions source code. Ensure that you have the latest SDK by running npm i --save firebase-functions inside the functions directory.
+[debug] [2018-08-28T03:27:08.602Z] Error during trigger parsing:  Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[warn] !  functions: Error from emulator. Error parsing triggers: Cannot find module 'firebase-functions'
+
+Try running "npm install" in your functions directory before deploying.
+[debug] [2018-08-28T03:27:08.603Z] 
