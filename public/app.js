@@ -1,33 +1,26 @@
-(function(){
-  // Initialize Firebase
-  const config = {
-    apiKey: "AIzaSyCOIw-jXibG6hzJ_4G0TFk67S3hoUP_va4",
-    authDomain: "con-tac-toe.firebaseapp.com",
-    databaseURL: "https://con-tac-toe.firebaseio.com",
-    projectId: "con-tac-toe",
-    storageBucket: "con-tac-toe.appspot.com",
-    messagingSenderId: "1010375995617"
-  };
-  	firebase.initializeApp(config);
-	// Get a reference to the database service
-	var database = firebase.database();
-	
-	const preObject = document.getElementById('object');
-	
-	const dbRefObject = database.ref().child('test');
-	
-	dbRefObject.on('value', snap => {
-		preObject.innerText = JSON.stringify(snap.val(), null, 3);
-	});
-}());
+const preObject = document.getElementById('object');
+fetch('https://us-central1-con-tac-toe.cloudfunctions.net/api/getTest')
+  .then(response => response.json())
+  .then(data => {
+    preObject.innerText = JSON.stringify(data, null, 3)
+  });
 
-function submit1(){
-	var x = document.getElementById("frm1");
-	var postData ={
-	entry1: x.elements[0].value,
-	entry2: x.elements[1].value
-	};
-	var update = {};
-	update['test'] = postData;
-	firebase.database().ref().update(update);
+function submit1() {
+  var x = document.getElementById("frm1");
+  var postData = {
+    entry1: x.elements[0].value,
+    entry2: x.elements[1].value
+  };
+  fetch('https://us-central1-con-tac-toe.cloudfunctions.net/api/putTest', {
+    method: 'post',
+    headers: {
+     'Accept': 'application/json',
+     'Content-Type': 'application/json'
+   },
+    body: JSON.stringify(postData, null, 3)
+  })
+  .then(response => response.json())
+  .then(data => {
+    preObject.innerText = JSON.stringify(data, null, 33)
+  })
 }
