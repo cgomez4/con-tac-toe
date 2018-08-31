@@ -8,8 +8,8 @@ fetch('https://us-central1-con-tac-toe.cloudfunctions.net/api/getTest')
 function submit1() {
   var x = document.getElementById("frm1");
   var postData = {
-    entry1: x.elements[0].value,
-    entry2: x.elements[1].value
+  entry1: x.elements[0].value,
+  entry2: x.elements[1].value
   };
   fetch('https://us-central1-con-tac-toe.cloudfunctions.net/api/putTest', {
     method: 'post',

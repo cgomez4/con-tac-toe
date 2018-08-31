@@ -35,8 +35,8 @@ app.post("/putTest", (request, response) => {
   )
 })
 
-const api = functions.https.onRequest(app)
+exports.api = functions.https.onRequest(app)
 
-module.exports = {
+/*module.exports = {
   api
-}
+}*/
