@@ -3,11 +3,13 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var logger = require('morgan');
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
-var signupRouter = require('./routes/signup');
 
 var app = express();
 
@@ -20,13 +22,23 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:false}));
 app.use(express.static(path.join(__dirname, 'public')));
+passport.use(new LocalStrategy(
+	function(username, password, done){
+		console.log(username);
+		console.log(password);
+		return done(null, false);
+	}
+));
 
 // basic routes(endpoint)
 app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use('/user', userRouter);
-app.use('/signup', signupRouter);
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -44,6 +56,6 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(3000);
+app.listen(3000, () => console.log('listen to 3000'));
 
 module.exports = app;
