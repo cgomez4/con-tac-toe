@@ -10,7 +10,7 @@ var LocalStrategy = require('passport-local').Strategy;
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
-
+var signupRouter = require('./routes/signup');
 var app = express();
 
 // view engine setup
@@ -37,7 +37,7 @@ passport.use(new LocalStrategy(
 app.use('/', indexRouter);
 app.use('/index', indexRouter);
 app.use('/user', userRouter);
-
+app.use('/signup', signupRouter);
 
 
 // catch 404 and forward to error handler

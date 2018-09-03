@@ -13,7 +13,7 @@ $(function (){
 
 		$.ajax({
 			type: 'POST',
-			url: 'signin',
+			url: 'index/signin',
 			data: passport,
 		}).done(function(data, textStatus, jqXHR){
 			if(jqXHR.responseText == 'true')
