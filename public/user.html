@@ -112,7 +112,7 @@
         <div id="modal1" class="modal">
           <div class="modal-content">
             <div class="row">
-<form class="col s12">
+<form class="col s12" action="index.html" method="post">
   <div class="row">
     <div class="input-field col s6">
       <input id="first_name" type="text" class="validate">
@@ -139,6 +139,7 @@
       <label for="address">Address</label>
     </div>
   </div>
+    <input class="btn" type="submit" value="Add">
 </form>
 </div>
           </div>
@@ -180,14 +181,8 @@
       });
     });
 
-  //SCROLLBAR INITIALIZATION
-  $(document).ready(function () {
-          if (!$.browser.webkit) {
-              $('.wrapper').html('<p>Sorry! Non webkit users. :(</p>');
-          }
-      });
 
-  //
+
   //AUTOCOMPLETE INITIALIZATION
 
     $(document).ready(function(){
