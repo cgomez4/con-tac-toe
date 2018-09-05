@@ -7,11 +7,17 @@ var bodyParser = require('body-parser');
 var logger = require('morgan');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
+var authMiddleware = require('./middleware/authMiddleware');
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var signupRouter = require('./routes/signup');
 var app = express();
+
+
+//tito's style
+var apiRouter = require('./routes/apiRoutes');
+var htmlRouter = require('./routes/htmlRoutes');
 
 // view engine setup
 // use jade as templete
@@ -25,6 +31,9 @@ app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false}));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(authMiddleware);
+
+
 passport.use(new LocalStrategy(
 	function(username, password, done){
 		console.log(username);
@@ -34,10 +43,18 @@ passport.use(new LocalStrategy(
 ));
 
 // basic routes(endpoint)
-app.use('/', indexRouter);
-app.use('/index', indexRouter);
-app.use('/user', userRouter);
-app.use('/signup', signupRouter);
+//app.use('/', indexRouter);
+//app.use('/index', indexRouter);
+//app.use('/user', userRouter);
+
+
+
+// tito's style -- separate API routes from the rest
+app.use('/api', apiRouter);
+app.use('/', htmlRouter);
+
+
+
 
 
 // catch 404 and forward to error handler

@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
 router.post('/checkunique', function(req, res, next) {
 	// todo 
 	// verify the username in the database
-	
+		
 	res.end('true');
 });
 
