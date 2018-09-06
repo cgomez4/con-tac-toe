@@ -131,7 +131,6 @@ router.route('/contacts/:id')
 
         var form = validateForm(res.body, modelFields, [])
         
-        
 
 
         // check if form is invalid
@@ -157,7 +156,7 @@ router.route('/contacts/:id')
                 // data belongs to the user. return data
                 return resources.updateCountact(req.params.id, params)
                     .then(() => {
-                        return res.json({...data, ...params});
+                        return res.json(Object.assign({}, data, params));
                     })
                     
 
