@@ -112,7 +112,7 @@
         <div id="modal1" class="modal">
           <div class="modal-content">
             <div class="row">
-<form class="col s12" action="index.html" method="post">
+<form class="col s12" method="post" id="addContact">
   <div class="row">
     <div class="input-field col s6">
       <input id="first_name" type="text" class="validate">
@@ -139,7 +139,7 @@
       <label for="address">Address</label>
     </div>
   </div>
-    <input class="btn" type="submit" value="Add">
+    <input class="btn" type="submit" value="Add" onclick="submit1()">
 </form>
 </div>
           </div>
@@ -161,7 +161,7 @@
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-
+    <script src="js/app.js"></script>
     <script>
 
   //COLLAPSIBLE INITIALIZATION
