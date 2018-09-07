@@ -1,0 +1,32 @@
+[debug] [2018-09-06T19:00:33.490Z] ----------------------------------------------------------------------
+[debug] [2018-09-06T19:00:33.495Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only functions
+[debug] [2018-09-06T19:00:33.495Z] CLI Version:   4.2.1
+[debug] [2018-09-06T19:00:33.495Z] Platform:      linux
+[debug] [2018-09-06T19:00:33.495Z] Node Version:  v10.8.0
+[debug] [2018-09-06T19:00:33.495Z] Time:          Thu Sep 06 2018 15:00:33 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-09-06T19:00:33.495Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-06T19:00:33.502Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-06T19:00:33.502Z] > authorizing via signed-in user
+[debug] [2018-09-06T19:00:33.504Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-09-06T19:00:33.875Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-06T19:00:33.877Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-09-06T19:00:34.355Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/titocal/Documents/school work/2018 Fall/Software Engineering/group projects/con-tac-toe'...
+[info] 
+[debug] [2018-09-06T19:00:34.960Z] Error: EACCES: permission denied, mkdir '/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/logs'
+    at Object.mkdirSync (fs.js:729:3)
+    at Object.assertLogsPath (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/emulator/logs.js:65:10)
+    at new Controller (/usr/local/lib/node_modules/firebase-tools/node_modules/@google-cloud/functions-emulator/src/cli/controller.js:77:32)
+    at FunctionsEmulator.start (/usr/local/lib/node_modules/firebase-tools/lib/functionsEmulator.js:113:21)
+    at Object.start (/usr/local/lib/node_modules/firebase-tools/lib/serve/functions.js:9:29)
+    at /usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:17:21
+    at arrayMap (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:639:23)
+    at Function.map (/usr/local/lib/node_modules/firebase-tools/node_modules/lodash/lodash.js:9554:14)
+    at _serve (/usr/local/lib/node_modules/firebase-tools/lib/serve/index.js:15:7)
+    at Command._action (/usr/local/lib/node_modules/firebase-tools/commands/serve.js:48:12)
+[error] 
+[error] Error: An unexpected error has occurred.
