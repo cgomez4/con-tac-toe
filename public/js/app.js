@@ -1,3 +1,6 @@
+//Get the freaking add contact button to freaking add a contact to the db
+//Update the ui with the new contact
+
 const preObject = document.getElementById('object');
 fetch('https://us-central1-con-tac-toe.cloudfunctions.net/api/getTest')
   .then(response => response.json())
