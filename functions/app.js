@@ -13,6 +13,7 @@ var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var signupRouter = require('./routes/signup');
 var app = express();
+var cors = require('cors')
 
 
 //tito's style
@@ -24,6 +25,8 @@ var htmlRouter = require('./routes/htmlRoutes');
 app.set('views', path.join(__dirname, 'public'));
 app.set('view engine', 'jade');
 
+
+app.use(cors()) // ENABLE ALL ORIGINS
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
