@@ -21,7 +21,7 @@ var htmlRouter = require('./routes/htmlRoutes');
 
 // view engine setup
 // use jade as templete
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'public'));
 app.set('view engine', 'jade');
 
 app.use(logger('dev'));
