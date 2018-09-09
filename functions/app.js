@@ -12,6 +12,9 @@ var authMiddleware = require('./middleware/authMiddleware');
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var signupRouter = require('./routes/signup');
+
+var cors = require('cors')
+
 var app = express();
 
 
@@ -24,6 +27,9 @@ var htmlRouter = require('./routes/htmlRoutes');
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
+
+
+app.use(cors())
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
