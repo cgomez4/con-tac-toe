@@ -21,7 +21,7 @@
                 <span class="card-title">Con-Tac-Toe</span>
                 
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" onSubmit="handleSubmit(event)">
                       <div class="row">
                         <div class="input-field col s12">
                           <input id="username" type="text" class="validate white-text text">
@@ -36,7 +36,7 @@
                       </div>
                       <div class="row">
                         <div class="input-field col s12 offset-s3">
-                          <a id='signin' class ="btn waves-effect waves-light btn-large"><i class="material-icons right">send</i>
+                          <a id='signin' type="submit" class ="btn waves-effect waves-light btn-large"><i class="material-icons right">send</i>
                             Sign In
                           </a>
                           <a id='signup' class ="btn waves-effect waves-light btn-large" href="signup"><i class="material-icons right">send</i>
@@ -59,6 +59,13 @@
     </div>
   </div>
 
+  <script>
+    function handleSubmit(event) {
+      event.preventdefault();
+      alert("crap!")
+    }
+
+  </script>
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
