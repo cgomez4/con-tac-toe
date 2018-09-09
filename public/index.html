@@ -21,11 +21,11 @@
                 <span class="card-title">Sign In</span>
                 
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" onSubmit="handleSubmit(event)">
                       <div class="row">
                         <div class="input-field col s12">
-                          <input id="username" type="text" class="validate white-text text">
-                          <label class="active" for="username">Username</label>
+                          <input id="email" type="text" class="validate white-text text">
+                          <label class="active" for="username">Email</label>
                         </div>
                       </div>
                       <div class="row">
@@ -36,9 +36,9 @@
                       </div>
                       <div class="row">
                         <div class="input-field col s12 offset-s3">
-                          <a class ="btn waves-effect waves-light btn-large" href="user.html"><i class="material-icons right">send</i>
-                            Sign In
-                          </a>
+                          <button class="btn waves-effect waves-light" type="submit" name="action">Sign in
+                            <i class="material-icons right">send</i>
+                          </button>
                           <a class ="btn waves-effect waves-light btn-large" href="signup.html"><i class="material-icons right">send</i>
                             Sign Up
                           </a>
@@ -63,6 +63,20 @@
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
+
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      fetch('http://con-tac-toe.firebaseapp.com/auth/signin', {
+        method: 'post',
+        body: JSON.stringify({
+          email: %("").val(),
+          password: ""
+        })
+      })
+    }
+
+  </script>
 
   </body>
 </html>
