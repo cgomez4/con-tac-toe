@@ -22,7 +22,7 @@ var htmlRouter = require('./routes/htmlRoutes');
 
 // view engine setup
 // use jade as templete
-app.set('views', path.join(__dirname, 'public'));
+app.set('views', path.join(__dirname, '../public'));
 app.set('view engine', 'jade');
 
 
@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false}));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../public')));
 app.use(authMiddleware);
 
 
