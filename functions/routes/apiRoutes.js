@@ -24,7 +24,7 @@ router.post('/auth/signup', function (req, res) {
         .then(function (data) {
             //console.log("signup success");
             console.log("data", data);
-            res.json({
+            return res.json({
                 result: "user-created",
                 message: "user was created succesfully"
             });
@@ -33,11 +33,22 @@ router.post('/auth/signup', function (req, res) {
             //console.log("signup failed");
             //console.log("error code", err.code);
             //console.log("message:", err.message);
-            let response = {
+            /**
+             * 
+             * 
+             * let response = {
+                error: "registration-failed",
+                message: "Could not register user"
+            }
+             * 
+             */
+
+            var response = {
                 error: err.code,
                 message: err.message
             }
-            res.status(400).json(response);
+            
+            return res.status(400).json(response);
         })
 })
 

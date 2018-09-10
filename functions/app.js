@@ -13,7 +13,7 @@ var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
 var signupRouter = require('./routes/signup');
 var app = express();
-var cors = require('cors')
+var cors = require('cors');
 
 
 //tito's style
@@ -26,24 +26,48 @@ app.set('views', path.join(__dirname, '../public'));
 app.set('view engine', 'jade');
 
 
-app.use(cors()) // ENABLE ALL ORIGINS
+app.use(cors({ origin: true }));
+app.use(function (req, res, next) {
+    // Website you wish to allow to connect
+    res.header('Access-Control-Allow-Origin', '*');
+
+    
+
+    // Request headers you wish to allow
+    res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Type, Accept, Authorization');
+
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    //res.header('Access-Control-Allow-Credentials', true);
+
+    // Pass to next layer of middleware
+    /*
+    if (req.method === 'OPTIONS') {
+      // Request methods you wish to allow
+      res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+      return res.status(200).json({});
+    }
+    */
+
+    next();
+    
+});
+
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(bodyParser.text());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false}));
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(authMiddleware);
 
 
-passport.use(new LocalStrategy(
-	function(username, password, done){
-		console.log(username);
-		console.log(password);
-		return done(null, false);
-	}
-));
+//app.use(cors({origin: true}));
+
+
 
 // basic routes(endpoint)
 //app.use('/', indexRouter);
@@ -54,16 +78,16 @@ passport.use(new LocalStrategy(
 
 // tito's style -- separate API routes from the rest
 app.use('/api', apiRouter);
+
+
+
 app.use('/', htmlRouter);
 
 
 
 
 
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+
 
 // error handler
 app.use(function(err, req, res, next) {

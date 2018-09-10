@@ -36,7 +36,7 @@
                       </div>
                       <div class="row">
                         <div class="input-field col s12 offset-s3">
-                          <button class="btn waves-effect waves-light" type="submit" name="action">Sign in
+                          <button class="btn waves-effect waves-light " type="submit" name="action">Sign in
                             <i class="material-icons right">send</i>
                           </button>
                           <a class ="btn waves-effect waves-light btn-large" href="signup.html"><i class="material-icons right">send</i>
@@ -51,10 +51,6 @@
                   <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
               </div> -->
             </div>
-
-
-
-        
       </div>
     </div>
   </div>
@@ -67,12 +63,35 @@
   <script>
     function handleSubmit(event) {
       event.preventDefault();
-      fetch('http://con-tac-toe.firebaseapp.com/auth/signin', {
-        method: 'post',
+      
+      let email = $("#email").val();
+      let pw = $("#password").val();
+      
+      console.log("email", email);
+      console.log("pw", pw);
+
+      fetch('https://con-tac-toe.firebaseapp.com/api/auth/signin', {
+        method: 'POST',
+
+        headers: {
+          "Content-Type": "application/json"
+
+          
+
+        },
         body: JSON.stringify({
-          email: %("").val(),
-          password: ""
-        })
+          email: email,
+          password: pw
+        })  
+      })
+      .then((response) => 
+        response.json()
+      )
+      .then(responseJson => {
+        console.log("response", responseJson)
+      })
+      .catch(err=>{
+        console.log("error", err);
       })
     }
 
