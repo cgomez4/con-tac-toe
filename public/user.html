@@ -9,8 +9,7 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <style>
+    <style>
     body{
       background-color: lightblue;
     }
@@ -55,7 +54,10 @@
     <div class="card">
         <div class="card blue-grey darken-1 ">
             <div class="card-content white-text">
-              <span class="card-title">Contacts</span>
+              <div class="row">
+              <span class="card-title col s6">Contacts</span> <div class="right-align"><a class="btn" href=index.html><i class="material-icons">arrow_back</i></a></div>
+            </div>
+
     <!-- SEARCH -->
     <div class="row">
       <div class="col s12">
@@ -102,7 +104,6 @@
 
           <!-- Modal Trigger -->
         <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Contact</a>
-
         <!-- Modal Structure -->
 
         <div id="modal1" class="modal">
@@ -131,17 +132,17 @@
   </div>
   <div class="row">
     <div class="input-field col s12">
-      <input id="Address" type="text" class="validate">
+      <input id="address" type="text" class="validate">
       <label for="address">Address</label>
     </div>
   </div>
   <!-- Our button that connects to a js file so we can send the data fields to backend -->
-    <input class="btn" type="submit" value="Add" onclick="submit1()">
+
 </form>
 </div>
           </div>
           <div class="modal-footer">
-            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+            <a  class="modal-close waves-effect waves-green btn-flat btn" onclick="pushNewContact()">Agree</a>
           </div>
         </div>
 
