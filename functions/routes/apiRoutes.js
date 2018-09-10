@@ -20,7 +20,7 @@ router.post('/auth/signup', function (req, res) {
      * Returns error codes if fails, following firebase's specs
      */ 
     
-    auth.registerUser(req.body.email, req.body.password, req.displayName)
+    auth.registerUser(req.body.email, req.body.password, req.body.displayName)
         .then(function (data) {
             //console.log("signup success");
             console.log("data", data);
