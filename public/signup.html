@@ -8,7 +8,7 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!--link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/-->
 </head>
 <body>
   <div class="row">
@@ -20,15 +20,11 @@
               <div class="card-content white-text">
                 <span class="card-title">Create An Account!</span>
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" onSubmit="handleSubmit(event)">
                       <div class="row">
-                        <div class="input-field col s6">
-                          <input id="last_name" type="text" class="validate white-text text">
-                          <label class="active" for="first_name">First Name</label>
-                        </div>
-                        <div class="input-field col s6">
-                          <input id="last_name" type="text" class="validate white-text text">
-                          <label class="active" for="last_name">Last Name</label>
+                        <div class="input-field col s12">
+                          <input id="email" type="text" class="validate white-text text">
+                          <label class="active" for="username">Email</label>
                         </div>
                       </div>
                       <div class="row">
@@ -39,21 +35,21 @@
                       </div>
                       <div class="row">
                           <div class="input-field col s12">
-                            <input id="password" type="password" class="validate white-text text">
+                            <input id="password_confirm" type="password" class="validate white-text text">
                             <label class="active" for="password">Confirm Password</label>
                           </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12">
-                          <input id="username" type="username" class="validate white-text text">
+                          <input id="username" type="text" class="validate white-text text">
                           <label class="active" for="username">Username</label>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s12 offset-s4">
-                          <a class ="btn waves-effect waves-light" href="index.html"><i class="material-icons right">send</i>
-                              Submit
-                          </a>
+                          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                          </button>
                         </div>
                       </div>
                     </form>
@@ -62,11 +58,7 @@
               <!-- <div class="card-image">
                   <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
               </div> -->
-            </div>
-
-
-
-        
+            </div>        
       </div>
     </div>
   </div>
@@ -74,8 +66,31 @@
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
+  <!--script src="js/init.js"></script-->
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      var email = document.getElementById('email').value;
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      var password_confirm = document.getElementById('password_confirm').value;
 
+      if(password == password_confirm){
+        fetch('https://con-tac-toe.firebaseapp.com/api/auth/signup', {
+          mode : 'no-cors',
+          method: 'post',
+          body: JSON.stringify({
+            email: email,
+            password: password,
+            displayName: username
+          })
+        })
+      }else{
+        alert('Password doesn\'t match');
+      }
+    }
+
+  </script>
   </body>
 </html>
 
