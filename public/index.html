@@ -19,7 +19,7 @@
           <div class="card blue-grey darken-1">
               <div class="card-content white-text">
                 <span class="card-title">Sign In</span>
-                
+
                 <div class="row">
                     <form class="col s12" onSubmit="handleSubmit(event)">
                       <div class="row">
@@ -36,7 +36,7 @@
                       </div>
                       <div class="row">
                         <div class="input-field col s12 offset-s3">
-                          <button class="btn waves-effect waves-light " type="submit" name="action">Sign in
+                          <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Sign in
                             <i class="material-icons right">send</i>
                           </button>
                           <a class ="btn waves-effect waves-light btn-large" href="signup.html"><i class="material-icons right">send</i>
@@ -63,10 +63,10 @@
   <script>
     function handleSubmit(event) {
       event.preventDefault();
-      
+
       let email = $("#email").val();
       let pw = $("#password").val();
-      
+
       console.log("email", email);
       console.log("pw", pw);
 
@@ -79,16 +79,24 @@
         body: JSON.stringify({
           email: email,
           password: pw
-        })  
+        })
       })
-      .then((response) => 
+      .then((response) =>
         response.json()
       )
       .then(responseJson => {
         console.log("response", responseJson)
+
+        if(responseJson.message == 'resource not found')
+          alert("Username and password do not match.");
+        else{
+          sessionStorage.token = responseJson.token;
+          window.open("user.html", "_self");
+        }
       })
       .catch(err=>{
         console.log("error", err);
+        alert("There was an error signing in, please try again later.");
       })
     }
 
@@ -96,5 +104,3 @@
 
   </body>
 </html>
-
-
