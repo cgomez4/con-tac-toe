@@ -76,22 +76,18 @@
         headers: {
           "Content-Type": "application/json"
 
-          
-
         },
         body: JSON.stringify({
           email: email,
           password: pw
         })  
       })
-      .then((response) => 
-        response.json()
-      )
+      .then(response => response.json())
       .then(responseJson => {
         console.log("response", responseJson)
       })
       .catch(err=>{
-        console.log("error", err);
+        console.log(err);
       })
     }
 
