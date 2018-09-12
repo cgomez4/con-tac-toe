@@ -2,9 +2,10 @@ var db = require('./firebase/firebaseInit').db;
 
 
 function createContact(uid, params) {
-    console.log("params", params)
+    //console.log("params", params)
     contactParam = Object.assign({}, params, {uid: uid});
-    console.log(contactParam);
+    //console.log(contactParam);
+    //console.log("here");
     return db.collection("contacts").add(contactParam)
         .then(function(docRef) {
             return Object.assign({}, contactParam, {id: docRef.id});

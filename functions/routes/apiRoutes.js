@@ -9,7 +9,8 @@ var validateForm = require('../utils/formvalidator');
 var trimObject = require('../utils/objectMethods').trimObject;
 
 function notAuthenticated(req) {
-    return req.user === undefined;
+    return false;
+    //return req.user === undefined;
 }
 
 // ---- Authentication Endpoints --------//
@@ -111,6 +112,7 @@ router.route('/contacts')
     })
     .post(function (req, res){
         console.log("body at post",req.body);
+        console.log(req.body.name);
         if (notAuthenticated(req)) 
             return res.status(403).json({
                 error: "signin-required",
@@ -136,7 +138,7 @@ router.route('/contacts')
             })    
         }
 
-        
+
         console.log("BODY", req.body);
         // create contact       
         resources.createContact(req.user.uid, {
@@ -150,7 +152,7 @@ router.route('/contacts')
             return res.json(params);
         })
         .catch(function(err) {
-            console.log(err);
+            //console.log(err);
             return res.status(400).json({error: "fail-to-create-contact",
                                          message: "Could not create contact. Check parameters"});
         })
