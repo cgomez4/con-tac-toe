@@ -8,7 +8,7 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <!--link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/-->
 </head>
 <body>
   <div class="row">
@@ -20,13 +20,13 @@
               <div class="card-content white-text">
                 <span class="card-title">Create An Account!</span>
                 <div class="row">
-                    <form class="col s12">
+                    <form class="col s12" onSubmit="handleSubmit(event)">
                       <div class="row">
-                              <div class="input-field col s12">
-                                <input id="email" type="username" class="validate">
-                                <label for="email">Email</label>
-                              </div>
-                            </div>
+                        <div class="input-field col s12">
+                          <input id="email" type="text" class="validate white-text text">
+                          <label class="active" for="username">Email</label>
+                        </div>
+                      </div>
                       <div class="row">
                         <div class="input-field col s12">
                           <input id="password" type="password" class="validate white-text text">
@@ -35,15 +35,21 @@
                       </div>
                       <div class="row">
                           <div class="input-field col s12">
-                            <input id="cPassword" type="password" class="validate white-text text">
+                            <input id="password_confirm" type="password" class="validate white-text text">
                             <label class="active" for="password">Confirm Password</label>
                           </div>
                       </div>
                       <div class="row">
+                        <div class="input-field col s12">
+                          <input id="username" type="text" class="validate white-text text">
+                          <label class="active" for="username">Username</label>
+                        </div>
+                      </div>
+                      <div class="row">
                         <div class="input-field col s12 offset-s4">
-                          <a class ="btn waves-effect waves-light" onclick="submitSignUp()"><i class="material-icons right">send</i>
-                              Submit
-                          </a>
+                          <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                            <i class="material-icons right">send</i>
+                          </button>
                         </div>
                       </div>
                     </form>
@@ -52,11 +58,7 @@
               <!-- <div class="card-image">
                   <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
               </div> -->
-            </div>
-
-
-
-
+            </div>        
       </div>
     </div>
   </div>
@@ -64,8 +66,52 @@
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
-  <script src="js/init.js"></script>
-  <script src="js/app.js"></script>
+  <!--script src="js/init.js"></script-->
+  <script>
+    function handleSubmit(event) {
+      event.preventDefault();
+      let email = $('#email').val();
+      let username = $('#username').val();
+      let password = $('#password').val();
+      let password_confirm = $('#password_confirm').val();
 
+      if(password == password_confirm){
+        fetch('https://con-tac-toe.firebaseapp.com/api/auth/signup', {
+          //mode : 'no-cors',
+          method: 'post',
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            email: email,
+            password: password,
+            displayName: username
+          })
+        })
+        .then((response) => response.json()
+        )
+        .then(responseJson => {
+          //console.log(response);
+          //console.log("response", responseJson);
+          console.log('responseJson');
+          alert(responseJson.message);
+          if(responseJson.message == 'user was created succesfully')
+            window.location.href = '../';
+          else
+            window.location.href = '';
+        })
+        .catch(err=>{
+          console.log('err');
+          alert(err.message);
+          window.location.href = '';
+        })
+      }else{
+        alert('Password doesn\'t match');
+      }
+    }
+
+  </script>
   </body>
 </html>
+
+

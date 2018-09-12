@@ -1,0 +1,36 @@
+[debug] [2018-09-12T12:21:38.755Z] ----------------------------------------------------------------------
+[debug] [2018-09-12T12:21:38.760Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\FrederickHaug\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-12T12:21:38.760Z] CLI Version:   4.2.1
+[debug] [2018-09-12T12:21:38.761Z] Platform:      win32
+[debug] [2018-09-12T12:21:38.761Z] Node Version:  v8.11.4
+[debug] [2018-09-12T12:21:38.762Z] Time:          Wed Sep 12 2018 08:21:38 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-09-12T12:21:38.762Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-12T12:21:38.795Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-12T12:21:38.797Z] > authorizing via signed-in user
+[debug] [2018-09-12T12:21:38.803Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-12T12:21:38.803Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+
+[debug] [2018-09-12T12:21:39.187Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-12T12:21:39.212Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-09-12T12:21:40.928Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-12T12:21:40.931Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe  
+ 
+[debug] [2018-09-12T12:21:41.510Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\FrederickHaug\Desktop\COP 4331\con-tac-toe'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-09-12T12:21:44.512Z] Fetching environment
+[debug] [2018-09-12T12:21:44.518Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617:getServerAppConfig  
+ 
+[debug] [2018-09-12T12:21:44.520Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/1010375995617/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-12T12:21:44.869Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-12T12:21:44.870Z] Starting @google-cloud/functions-emulator
+[debug] [2018-09-12T12:21:45.100Z] <<< HTTP RESPONSE 200
+[info] i  hosting[con-tac-toe]: Serving hosting files from: public
+[info] +  hosting[con-tac-toe]: Local server: http://localhost:5000
+[debug] [2018-09-12T12:21:49.975Z] Parsing function triggers
+[info] +  functions: app: http://localhost:5001/con-tac-toe/us-central1/app
