@@ -4,7 +4,7 @@
  *  module.
  */
 
-var firebase = require('firebase') // for client sdk -- sign in, out, register
+var firebase = require('firebase'); // for client sdk -- sign in, out, register
 var admin = require("firebase-admin");
 
 const config = {
