@@ -20,7 +20,7 @@ router.post('/auth/signup', function (req, res) {
      * Returns error codes if fails, following firebase's specs
      */ 
     
-    auth.registerUser(req.body.email, req.body.password, req.displayName)
+    auth.registerUser(req.body.email, req.body.password, req.body.displayName)
         .then(function (data) {
             //console.log("signup success");
             console.log("data", data);
@@ -110,24 +110,49 @@ router.route('/contacts')
             });
     })
     .post(function (req, res){
+        console.log("body at post",req.body);
         if (notAuthenticated(req)) 
             return res.status(403).json({
                 error: "signin-required",
                 message: "you must sign in to access this resource"
             })
-        // create contact   
+
+        var modelFields = ['email', 'address', 'name', 'phoneNumber', 'isFavorite'];
+        var requiredFields = ['email', 'address', 'name', 'phoneNumber'];
+
+        var form = validateForm(req.body, modelFields, requiredFields);
+        
+        // check if form is invalid
+        if (!form.isValid){
+            if (form.anyFieldRejected)
+                return res.status(400).json({
+                    error: "bad-request",
+                    message: "These fields are not allowed: " + form.rejectedFields.toString() 
+                })
+            
+            return res.status(400).json({
+                error: "bad-request",
+                message: "These required fields are missing " + form.missingFields.toString()
+            })    
+        }
+
+        
+        console.log("BODY", req.body);
+        // create contact       
         resources.createContact(req.user.uid, {
-            address: req.body.Address,
-            email: req.body.Email,
-            isFavorite: req.body.IsFavorite,
-            name: req.body.Name,
-            phoneNumber: req.body.PhoneNumber,    
+            address: req.body.address,
+            email: req.body.email,
+            isFavorite: (!req.body.isFavorite)? "false": req.body.isFavorite,
+            name: req.body.name,
+            phoneNumber: req.body.phoneNumber,    
         })
         .then(function(params) {
             return res.json(params);
         })
         .catch(function(err) {
-            return res.status(400).send("Could not create contact. Check parameters");
+            console.log(err);
+            return res.status(400).json({error: "fail-to-create-contact",
+                                         message: "Could not create contact. Check parameters"});
         })
     })
 
@@ -140,7 +165,7 @@ router.route('/contacts/:id')
                 message: "you must sign in to access this resource"
             })
 
-        console.log("contact id: ",req.params.id);
+        //console.log("contact id: ",req.params.id);
         resources.retrieveContact(req.params.id)
             .then(data => {
  
@@ -171,7 +196,7 @@ router.route('/contacts/:id')
             })
         var modelFields = ['email', 'address', 'name', 'phoneNumber', 'isFavorite'];
 
-        var form = validateForm(res.body, modelFields, [])
+        var form = validateForm(req.body, modelFields, [])
         
         
 
@@ -187,13 +212,10 @@ router.route('/contacts/:id')
             return res.status(400).json({
                 error: "bad-request",
                 message: "These required fields are missing " + form.missingFields.toString()
-            })
-            
-            
-            
+            })    
         }
             
-        console.log(req.body)
+        //console.log(req.body)
         var params = trimObject(req.body, modelFields);
         console.log("params", params)
 
@@ -269,6 +291,7 @@ router.route('/contacts/:id')
 
 
     router.use(function (err, req, res, next) {
+        
         // middleware for logging errors
         if (err) {
           console.log('Error', err);

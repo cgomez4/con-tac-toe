@@ -12,14 +12,20 @@ function validateForm(parsedBody, allowedFields, requiredFields) {
     for (var key in parsedBody) {
         // if request contained fields other than allowed
         if (allowedFields.indexOf(key) === -1)
-            rejectedFields.push(req.body[key]);
+            rejectedFields.push(req.body[allowedFields[key]]);
     }
     
     var missingFields = []
     for (var field in requiredFields){
-        if (parsedBody[field] === undefined)
-            missingFields.push(field);
+        if (parsedBody[requiredFields[field]] === undefined)
+            missingFields.push(requiredFields[field]);
     }
+    
+    var formData = {}
+    for (let field in parsedBody) {
+        formData[field] = parsedBody[field];
+    }
+
 
     return {
         anyFieldRejected: (rejectedFields.length > 0),
@@ -28,7 +34,8 @@ function validateForm(parsedBody, allowedFields, requiredFields) {
         anyReqFieldMissing: (missingFields.length > 0),
         missingFields: missingFields,
 
-        isValid: (rejectedFields.length === 0 && missingFields.length === 0)
+        isValid: (rejectedFields.length === 0 && missingFields.length === 0),
+        formData: (rejectedFields.length === 0 && missingFields.length === 0) ? formData: undefined
     };
 }
 

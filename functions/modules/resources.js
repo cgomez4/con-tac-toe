@@ -2,7 +2,9 @@ var db = require('./firebase/firebaseInit').db;
 
 
 function createContact(uid, params) {
+    console.log("params", params)
     contactParam = Object.assign({}, params, {uid: uid});
+    console.log(contactParam);
     return db.collection("contacts").add(contactParam)
         .then(function(docRef) {
             return Object.assign({}, contactParam, {id: docRef.id});
@@ -41,6 +43,7 @@ function deleteContact(contactId) {
 
 function updateCountact(contactId, params){
     // data belongs to the user. return data
+   
     return db.collection('contacts').doc(contactId).update(params);
 }
 
