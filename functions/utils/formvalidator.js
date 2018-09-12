@@ -12,7 +12,7 @@ function validateForm(parsedBody, allowedFields, requiredFields) {
     for (var key in parsedBody) {
         // if request contained fields other than allowed
         if (allowedFields.indexOf(key) === -1)
-            rejectedFields.push(req.body[allowedFields[key]]);
+            rejectedFields.push(parsedBody[allowedFields[key]]);
     }
     
     var missingFields = []

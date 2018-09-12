@@ -75,23 +75,15 @@
 
         headers: {
           "Content-Type": "application/json"
-<<<<<<< HEAD
-
-=======
->>>>>>> 618f68ea44883b748d0ddab4f7a35e3d0cf9205b
         },
         body: JSON.stringify({
           email: email,
           password: pw
         })
       })
-<<<<<<< HEAD
-      .then(response => response.json())
-=======
       .then((response) =>
         response.json()
       )
->>>>>>> 618f68ea44883b748d0ddab4f7a35e3d0cf9205b
       .then(responseJson => {
         console.log("response", responseJson)
 
@@ -99,16 +91,13 @@
           alert("Username and password do not match.");
         else{
           sessionStorage.token = responseJson.token;
+          sessionStorage.uid = responseJson.id;
           window.open("user.html", "_self");
         }
       })
       .catch(err=>{
-<<<<<<< HEAD
-        console.log(err);
-=======
         console.log("error", err);
         alert("There was an error signing in, please try again later.");
->>>>>>> 618f68ea44883b748d0ddab4f7a35e3d0cf9205b
       })
     }
 
