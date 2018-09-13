@@ -92,6 +92,7 @@ router.route('/user')
 
 router.route('/contacts')
     .get(function (req, res){
+        console.log(req.body);
         if (notAuthenticated(req)) 
             return res.status(403).json({
                 error: "signin-required",

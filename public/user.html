@@ -110,19 +110,12 @@
 
 <script>
   function handleNewContactSubmit() {
-    var name = document.getElementById("name").value;
-    var number = document.getElementById("number").value;
-    var email = document.getElementById("email").value;
-    var address = document.getElementById("address").value;
+    let name = $("#name").val();
+    let number = $("#number").val();
+    let email = $("#email").val();
+    let address = $("#address").val();
 
-    var postData = {
-      name: name,
-      number: number,
-      email: email,
-      address: address
-    }
-
-    fetch("https://con-tac-toe.firebaseapp.com/api/contacts",  {
+    fetch("https://con-tac-toe.firebaseapp.com/api/contacts", {
       method: 'post',
       mode: 'no-cors',
       headers: {
@@ -130,7 +123,12 @@
        'Content-Type': 'application/x-www-form-urlencoded',
        'bearer': sessionStorage.token
      },
-      body: JSON.stringify(postData)
+      body: JSON.stringify({
+        name: name,
+        number: number,
+        email: email,
+        address: address
+      })
     })
     .then(function(response){
       conosle.log("response", response);
