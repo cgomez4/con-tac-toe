@@ -1,0 +1,16 @@
+[debug] [2018-09-13T15:14:56.421Z] ----------------------------------------------------------------------
+[debug] [2018-09-13T15:14:56.425Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\FrederickHaug\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-13T15:14:56.425Z] CLI Version:   4.2.1
+[debug] [2018-09-13T15:14:56.425Z] Platform:      win32
+[debug] [2018-09-13T15:14:56.425Z] Node Version:  v8.11.4
+[debug] [2018-09-13T15:14:56.425Z] Time:          Thu Sep 13 2018 11:14:56 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-09-13T15:14:56.426Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-13T15:14:56.440Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-13T15:14:56.441Z] > authorizing via signed-in user
+[debug] [2018-09-13T15:14:56.444Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe2  
+ 
+[debug] [2018-09-13T15:14:56.895Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-13T15:14:56.896Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe2  
+ 
+[debug] [2018-09-13T15:14:57.156Z] <<< HTTP RESPONSE 200
