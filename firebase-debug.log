@@ -1,0 +1,32 @@
+[debug] [2018-09-13T04:36:15.409Z] ----------------------------------------------------------------------
+[debug] [2018-09-13T04:36:15.412Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\rupto\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-13T04:36:15.412Z] CLI Version:   4.2.1
+[debug] [2018-09-13T04:36:15.412Z] Platform:      win32
+[debug] [2018-09-13T04:36:15.412Z] Node Version:  v8.11.4
+[debug] [2018-09-13T04:36:15.412Z] Time:          Thu Sep 13 2018 00:36:15 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-09-13T04:36:15.412Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-13T04:36:15.421Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-13T04:36:15.422Z] > authorizing via signed-in user
+[debug] [2018-09-13T04:36:15.423Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe2  
+ 
+[debug] [2018-09-13T04:36:15.766Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-13T04:36:15.767Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe2  
+ 
+[debug] [2018-09-13T04:36:15.976Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\rupto\Desktop\con-tac-toe2'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-09-13T04:36:16.755Z] Fetching environment
+[debug] [2018-09-13T04:36:16.758Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/104103454652:getServerAppConfig  
+ 
+[debug] [2018-09-13T04:36:16.758Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/104103454652/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-13T04:36:16.903Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-13T04:36:16.903Z] Starting @google-cloud/functions-emulator
+[debug] [2018-09-13T04:36:16.970Z] <<< HTTP RESPONSE 200
+[info] i  hosting[con-tac-toe2]: Serving hosting files from: public
+[info] +  hosting[con-tac-toe2]: Local server: http://localhost:5000
+[debug] [2018-09-13T04:36:18.937Z] Parsing function triggers
+[info] +  functions: app: http://localhost:5001/con-tac-toe2/us-central1/app
