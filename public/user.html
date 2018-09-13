@@ -63,7 +63,7 @@
       <div class="col s12">
         <div class="row">
           <div class="input-field col s12">
-            <input type="text" id="autocomplete-input" class="autocomplete white-text text">
+            <input type="text" id="autocomplete-input" onkeyup="pruneSeach()" placeholder="" class="autocomplete white-text text">
             <label for="autocomplete-input">Search</label>
           </div>
         </div>
@@ -75,12 +75,9 @@
     <div class="row">
 
     <div class="scrollbar" id="style-1">
-    <ul class="collapsible" data-collapsible="accordion">
-      <!-- <li>
-        <div id="he" class="collapsible-header black-text text" onclick=""><i class="material-icons">account_circle</i>Freddy Haug</div>
-        <div class="collapsible-body white black-text text"><div class="valign-wrapper row"><i class="material-icons ">call</i><h6 class="col">9548997868</h6><i class="material-icons">email</i><h6 class="col">haug.freddy@gmail.com</h6><i class="material-icons">place</i><h6 class="col">233 wildwood cirlce</h6></div></div>
-      </li>
-      <li>
+    <ul id='myUL' class="collapsible" data-collapsible="accordion">
+
+      <!--<li>
         <div class="collapsible-header black-text text"><i class="material-icons">account_circle</i>Rodney Rowboat</div>
         <div class="collapsible-body white black-text text"><div class="valign-wrapper row"><i class="material-icons ">call</i><h6 class="col">9548997868</h6><i class="material-icons">email</i><h6 class="col">haug.freddy@gmail.com</h6><i class="material-icons">place</i><h6 class="col">233 wildwood cirlce</h6></div></div>
       </li>
@@ -114,10 +111,10 @@
 function handleNewContactSubmit() {
   console.log("got here");
   event.preventDefault();
+  var address = document.getElementById("address").value;
+  var email = document.getElementById("email").value;
   var name = document.getElementById("name").value;
   var number = document.getElementById("number").value;
-  var email = document.getElementById("email").value;
-  var address = document.getElementById("address").value;
 
   var postData = {
     name: name,
@@ -155,7 +152,7 @@ function handleNewContactSubmit() {
   .then(function(responseData){
     console.log("responseData", responseData);
         if(responseData != null)
-          pushNewContact(responseData.name, responseData.email, responseData.phoneNumber, responseData.address, responseData.id);
+          pushNewContact(responseData.name, responseData.phoneNumber, responseData.email, responseData.address, responseData.id);
   })
   .catch(function(error){
     console.log(error);
@@ -209,7 +206,7 @@ function handleNewContactSubmit() {
 </div>
           </div>
           <div class="modal-footer">
-            <a  class="center-align waves-effect waves-green btn-flat btn" onclick="handleNewContactSubmit()">Agree</a>
+            <a  class="center-align waves-effect waves-green modal-close btn-flat btn" onclick="handleNewContactSubmit()">Agree</a>
           </div>
         </div>
 
@@ -317,34 +314,34 @@ function handleNewContactSubmit() {
 
   //AUTOCOMPLETE INITIALIZATION
 
-    $(document).ready(function(){
-      $('input.autocomplete').autocomplete({
-        data: {
-          "Apple": null,
-          "Microsoft": null,
-          "Google": null
-        },
-      });
-    });
+    // $(document).ready(function(){
+    //   $('input.autocomplete').autocomplete({
+    //     data: {
+    //       "Apple": null,
+    //       "Microsoft": null,
+    //       "Google": null
+    //     },
+    //   });
+    // });
 
 
 
   //AUTOCOMPLETE INITIALIZATION
 
-    $(document).ready(function(){
-      $('input.autocomplete').autocomplete({
-        data: {
-          "Apple": null,
-          "Microsoft": null,
-          "Google": null,
-          "Freddy Haug": null,
-          "Rodney Rowboat": null,
-          "Trink Serto": null,
-          "Marie d'Cat": null,
-          "Dante Inferno": null
-        },
-      });
-    });
+    // $(document).ready(function(){
+    //   $('input.autocomplete').autocomplete({
+    //     // data: {
+    //     //   "Apple": null,
+    //     //   "Microsoft": null,
+    //     //   "Google": null,
+    //     //   "Freddy Haug": null,
+    //     //   "Rodney Rowboat": null,
+    //     //   "Trink Serto": null,
+    //     //   "Marie d'Cat": null,
+    //     //   "Dante Inferno": null
+    //     // },
+    //   });
+    // });
 
   //MODAL INITIALIZATION
 

@@ -1,16 +1,32 @@
-[debug] [2018-09-13T06:05:25.947Z] ----------------------------------------------------------------------
-[debug] [2018-09-13T06:05:25.955Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\FrederickHaug\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
-[debug] [2018-09-13T06:05:25.955Z] CLI Version:   4.2.1
-[debug] [2018-09-13T06:05:25.955Z] Platform:      win32
-[debug] [2018-09-13T06:05:25.955Z] Node Version:  v8.11.4
-[debug] [2018-09-13T06:05:25.957Z] Time:          Thu Sep 13 2018 02:05:25 GMT-0400 (Eastern Daylight Time)
-[debug] [2018-09-13T06:05:25.957Z] ----------------------------------------------------------------------
+[debug] [2018-09-13T06:31:20.591Z] ----------------------------------------------------------------------
+[debug] [2018-09-13T06:31:20.600Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\FrederickHaug\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-09-13T06:31:20.601Z] CLI Version:   4.2.1
+[debug] [2018-09-13T06:31:20.601Z] Platform:      win32
+[debug] [2018-09-13T06:31:20.601Z] Node Version:  v8.11.4
+[debug] [2018-09-13T06:31:20.603Z] Time:          Thu Sep 13 2018 02:31:20 GMT-0400 (Eastern Daylight Time)
+[debug] [2018-09-13T06:31:20.603Z] ----------------------------------------------------------------------
 [debug] 
-[debug] [2018-09-13T06:05:25.991Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
-[debug] [2018-09-13T06:05:25.993Z] > authorizing via signed-in user
-[debug] [2018-09-13T06:05:26.000Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe2  
+[debug] [2018-09-13T06:31:20.640Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-13T06:31:20.643Z] > authorizing via signed-in user
+[debug] [2018-09-13T06:31:20.651Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/con-tac-toe2  
  
-[debug] [2018-09-13T06:05:26.423Z] <<< HTTP RESPONSE 200
-[debug] [2018-09-13T06:05:26.427Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe2  
+[debug] [2018-09-13T06:31:21.075Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-13T06:31:21.077Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/con-tac-toe2  
  
-[debug] [2018-09-13T06:05:26.637Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-13T06:31:21.282Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\FrederickHaug\Desktop\COP 4331\con-tac-toe'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-09-13T06:31:23.267Z] Fetching environment
+[debug] [2018-09-13T06:31:23.274Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/104103454652:getServerAppConfig  
+ 
+[debug] [2018-09-13T06:31:23.275Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/104103454652/clients/_:getWebAppConfig  
+ 
+[debug] [2018-09-13T06:31:23.524Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-13T06:31:23.525Z] Starting @google-cloud/functions-emulator
+[debug] [2018-09-13T06:31:23.595Z] <<< HTTP RESPONSE 200
+[info] i  hosting[con-tac-toe2]: Serving hosting files from: public
+[info] +  hosting[con-tac-toe2]: Local server: http://localhost:5000
+[debug] [2018-09-13T06:31:28.625Z] Parsing function triggers
+[info] +  functions: app: http://localhost:5001/con-tac-toe2/us-central1/app
