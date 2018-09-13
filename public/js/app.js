@@ -14,8 +14,9 @@ function push() {
 }
 
 //This is for adding new contacts, Evetually we need these variables to pass over to the backend to save the contact to database
-function pushNewContact(name, number, email, address) {
-  $(".collapsible").append("<li><div id='he' class='collapsible-header black-text text'><i class='material-icons'>account_circle</i>"+name+"</div><div id='he1' class='collapsible-body white black-text text' row><div class='valign-wrapper'><i class='material-icons'>call</i><h6 class='col'>"+number+"</h6><i class='material-icons'>email</i><h6 class='col'>"+email+"</h6><i class='material-icons'>place</i><h6 class='col'>"+address+"</h6></div><a row s1 class='btn red' onclick='event.stopPropagation(); pushDeleteContact()'><i col offset-s10 class='material-icons'>delete</i></a></li>");
+//change id from he and he1 to a unique id that that will delete any element on page with that id.
+function pushNewContact(name, number, email, address, id) {
+  $(".collapsible").append("<li><div id='"+id+"'' class='collapsible-header black-text text'><i class='material-icons'>account_circle</i>"+id+"</div><div id='he1' class='collapsible-body white black-text text' row><div class='valign-wrapper'><i class='material-icons'>call</i><h6 class='col'>"+number+"</h6><i class='material-icons'>email</i><h6 class='col'>"+email+"</h6><i class='material-icons'>place</i><h6 class='col'>"+address+"</h6></div><a row s1 class='btn red' onclick='event.stopPropagation(); pushDeleteContact()'><i col offset-s10 class='material-icons'>delete</i></a></li>");
   //COLLAPSIBLE INITIALIZATION
  $('.collapsible').collapsible();
 }
@@ -31,4 +32,16 @@ function pushLogOut(sample) {
   console.log("youre out");
   sessionStorage.clear();
 
+}
+
+function pruneSeach(){
+    // Declare variables
+    var input, filter, ul, li, a, i;
+    input = document.getElementById('myInput');
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName('li');
+
+    //Loop through all list items
+    console.log("hi");
 }

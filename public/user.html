@@ -55,7 +55,7 @@
         <div class="card blue-grey darken-1 ">
             <div class="card-content white-text">
               <div class="row">
-              <span class="card-title col s6">Contacts</span> <div class="right-align"><a id="eee" class="btn" onclick="pushLogOut()"><i class="material-icons">arrow_back</i></a></div>
+              <span class="card-title col s6">Contacts</span> <div class="right-align"><a id="eee" class="btn" onclick="pushLogOut()" href="index.html"><i class="material-icons">arrow_back</i></a></div>
             </div>
 
     <!-- SEARCH -->
@@ -63,7 +63,7 @@
       <div class="col s12">
         <div class="row">
           <div class="input-field col s12">
-            <input type="text" id="autocomplete-input" class="autocomplete white-text text">
+            <input type="text" id="autocomplete-input" class="autocomplete white-text text" onclick="">
             <label for="autocomplete-input">Search</label>
           </div>
         </div>
@@ -107,7 +107,7 @@
           <!-- here? -->
 
           <!-- Modal Trigger -->
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Contact</a>
+        <div class="center-align"> <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Add Contact</a> </div>
 
 
 <script>
@@ -209,7 +209,7 @@ function handleNewContactSubmit() {
 </div>
           </div>
           <div class="modal-footer">
-            <a  class="waves-effect waves-green btn-flat btn" onclick="handleNewContactSubmit()">Agree</a>
+            <a  class="center-align waves-effect waves-green btn-flat btn" onclick="handleNewContactSubmit()">Agree</a>
           </div>
         </div>
 
@@ -231,15 +231,20 @@ function handleNewContactSubmit() {
 
   //CREATE JS OBJECT Arrays
   var sample = new Array();
-  sample = [{name: "fred", address: "233 wildwood", email: "haug.gr@gmail.com", phone: "9543325632"},
-            {name: "camilo", address: "470 camo", email: "refv@yahoo.com", phone: "9324234542"}];
+  sample = [{name: "fred", address: "233 wildwood", email: "haug.gr@gmail.com", phone: "9543325632", id: "34rrfwrgwe"},
+            {name: "camilo", address: "470 camo", email: "refv@yahoo.com", phone: "9324234542", id: "caueyeybuhbwf3"}];
 
  //DISPLAY THE OBJECTS AND IN THE CORRECT DIV FORMAT
   $( document ).ready(function() {
+
+    //Grab ContactList
+
+    //Go through array and 
+
       for(var i = 0; i<sample.length; i++)
       {
         //Display the divs with the correct info
-        pushNewContact(sample[i].name, sample[i].phone, sample[i].email, sample[i].address);
+        pushNewContact(sample[i].name, sample[i].phone, sample[i].email, sample[i].address, sample[i].id);
       }
 });
 
