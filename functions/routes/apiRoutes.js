@@ -55,6 +55,7 @@ router.post('/auth/signup', function (req, res) {
 
 router.post('/auth/signin', function (req, res) {
     // returns token
+    console.log(req.body);
     auth.signUserIn(req.body.email, req.body.password)
         .then(function(userData) {
             //console.log('user data post-sign in', userData);
