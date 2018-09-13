@@ -119,10 +119,9 @@
       method: 'post',
       mode: 'no-cors',
       headers: {
-       'Accept': 'application/json',
        'Content-Type': 'application/x-www-form-urlencoded',
        'bearer': sessionStorage.token
-     },
+      },
       body: JSON.stringify({
         name: name,
         number: number,
@@ -200,6 +199,7 @@
     </div><!-- END OF CONTAINER -->
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
     <script src="js/app.js"></script>
     <script>
