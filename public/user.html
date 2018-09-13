@@ -96,10 +96,10 @@
         <div class="collapsible-header black-text text"><i class="material-icons">account_circle</i>Trink Serto</div>
         <div class="collapsible-body white black-text text"><div class="valign-wrapper row"><i class="material-icons ">call</i><h6 class="col">9548997868</h6><i class="material-icons">email</i><h6 class="col">haug.freddy@gmail.com</h6><i class="material-icons">place</i><h6 class="col">233 wildwood cirlce</h6></div></div>
       </li> -->
-      <li>
+      <!-- <li>
         <div id='he' class='collapsible-header black-text text'><i class='material-icons'>account_circle</i>freddy</div><div id='he1' class='collapsible-body white black-text text' row><div class='valign-wrapper'><i class='material-icons'>call</i><h6 class='col'>9542345432</h6><i class='material-icons'>email</i>
           <h6 class='col'>few@er.com</h6><i class='material-icons'>place</i><h6 class='col'>233 wodlwood rvedf</h6></div><a row s1 class='btn red' onclick='event.stopPropagation(); pushDeleteContact()'><i col offset-s10 class='material-icons'>delete</i></a>
-        </li>
+        </li> -->
       </div>
     </ul>
             </div>
@@ -230,17 +230,73 @@ function handleNewContactSubmit() {
     <script>
 
   //CREATE JS OBJECT Arrays
-  var sample = new Array();
-  sample = [{name: "fred", address: "233 wildwood", email: "haug.gr@gmail.com", phone: "9543325632"},
-            {name: "camilo", address: "470 camo", email: "refv@yahoo.com", phone: "9324234542"}];
+
+
+   var sample = new Array();
+  // sample = [{name: "fred", address: "233 wildwood", email: "haug.gr@gmail.com", phone: "9543325632"},
+  //           {name: "camilo", address: "470 camo", email: "refv@yahoo.com", phone: "9324234542"}];
+
+
+    // fetch("https://us-central1-con-tac-toe2.cloudfunctions.net/app/api/contacts",  {
+    //   method: 'get',
+    //    headers: {
+    //     'bearer': sessionStorage.token
+    //   }
+    // })
+    // .then(function(response){
+    //
+    //   console.log("response", response);
+    //   if(response.status != null){
+    //     sample = response;
+    //     return response.json();
+    //   }
+    //     return null;
+    // })
+    //
+    // // .then(function(responseData){
+    // //   console.log("responseData", responseData);
+    // //       if(responseData != null)
+    // //         pushNewContact(responseData.name, responseData.email, responseData.phoneNumber, responseData.address, responseData.id);
+    // // })
+    // .catch(function(error){
+    //   console.log(error);
+    // })
+
+
 
  //DISPLAY THE OBJECTS AND IN THE CORRECT DIV FORMAT
   $( document ).ready(function() {
-      for(var i = 0; i<sample.length; i++)
-      {
-        //Display the divs with the correct info
-        pushNewContact(sample[i].name, sample[i].phone, sample[i].email, sample[i].address);
+    fetch("https://us-central1-con-tac-toe2.cloudfunctions.net/app/api/contacts",  {
+      method: 'get',
+       headers: {
+        'bearer': sessionStorage.token
       }
+    })
+    .then(function(response){
+
+      // console.log("response", response);
+      if(response.status != null){
+        return response.json();
+      }
+        return null;
+    })
+
+    .then(function(responseData){
+      console.log("responseData", responseData);
+          if(responseData != null)
+          sample = responseData;
+          console.log(sample);
+            //pushNewContact(responseData.name, responseData.email, responseData.phoneNumber, responseData.address, responseData.id);
+            for(var i = 0; i<sample.length; i++)
+            {
+              //Display the divs with the correct info
+              pushNewContact(sample[i].name, sample[i].phoneNumber, sample[i].email, sample[i].address, sample[i].id);
+            }
+    })
+    .catch(function(error){
+      console.log(error);
+    })
+
 });
 
 
