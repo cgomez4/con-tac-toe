@@ -113,8 +113,8 @@ router.route('/contacts')
             });
     })
     .post(function (req, res){
-        console.log("body at post",req.body);
-        console.log(req.body.name);
+        console.log("body at post",JSON.parse(req.body));
+        console.log(JSON.parse(req.body).name);
         if (notAuthenticated(req)) 
             return res.status(403).json({
                 error: "signin-required",
@@ -124,7 +124,7 @@ router.route('/contacts')
         var modelFields = ['email', 'address', 'name', 'phoneNumber', 'isFavorite'];
         var requiredFields = ['email', 'address', 'name', 'phoneNumber'];
 
-        var form = validateForm(req.body, modelFields, requiredFields);
+        var form = validateForm(JSON.parse(req.body), modelFields, requiredFields);
         
         // check if form is invalid
         if (!form.isValid){
